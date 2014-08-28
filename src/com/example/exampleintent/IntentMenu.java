@@ -1,14 +1,15 @@
 package com.example.exampleintent;
 
-import com.example.screen.SecondScreen;
-
-import android.R.anim;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
 
 /**
  * @author VictorSampaio
@@ -23,31 +24,51 @@ public class IntentMenu extends ListActivity {
 	@Override
 	protected void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		setContentView(R.layout.activity_intent_menu);
+		//setContentView(R.layout.activity_intent_menu);
 
 		String[] topic = new String[] {
-				"1","2","3","4"
+				"1","2","3","4","Exit"
 		};
 
-		this.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, topic));
+		this.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, topic));
 	}
 	
 	@Override
-	protected void onListItemClick(android.widget.ListView l, android.view.View v, int position, long id) {
-		try {
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		try { 
 			switch (position) {
 			case 0:
 					Intent intent = new Intent(this, SecondScreen.class);
-					intent.putExtra("Message", "Test to Intent. This is Second Screen!");
+					intent.putExtra("message", "Test to Intent. This is Second Screen!");
 					startActivity(intent);
 				break;
-
+			case 1:
+				Intent inten = new Intent(this, SecondScreen.class);
+				inten.putExtra("Message", "Test to Intent. This is Second Screen!");
+				startActivity(inten);
+			break;
+			case 2:
+				Intent inte = new Intent(this, SecondScreen.class);
+				inte.putExtra("Message", "Test to Intent. This is Second Screen!");
+				startActivity(inte);
+			break;
+			case 3:
+				Intent intee = new Intent(this, SecondScreen.class);
+				intee.putExtra("Message", "Test to Intent. This is Second Screen!");
+				startActivity(intee);
+			break;
+			case 4:
+				Intent inteee = new Intent(this, SecondScreen.class);
+				inteee.putExtra("message", "Test to Intent. This is Second Screen!");
+				startActivity(inteee);
+			break;
 			default:
-				break;
+				finish();
 			}
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			Toast.makeText(this, "Erro :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+			
 		}
 	};
 	
