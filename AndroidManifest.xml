@@ -22,10 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-       
         <activity
-            android:name=".SecondScreen"
+            android:name="com.example.screen.SecondScreen"
             android:label="@string/title_activity_second_screen" >
+        </activity>
+        <activity
+            android:name="com.example.screenYesNo.ScreenYesOrNo"
+            android:label="@string/title_activity_screen_yes_or_no" >
         </activity>
     </application>
 

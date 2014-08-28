@@ -1,4 +1,4 @@
-package com.example.exampleintent;
+package com.example.screen;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.example.exampleintent.R;
 
 public class SecondScreen extends Activity {
 
